@@ -1,4 +1,4 @@
-let nome = "Carlos";
+let nome = "Eduardo";
 let idade = 25;
 
 console.log("Nome: "+ nome);

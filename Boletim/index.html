@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boletim Escolar</title>
+  <style>
+    body {
+      font-family: Arial;
+      background-color: rgba(65, 112, 213, 0.482);
+      padding: 20px;
+    }
+    h1 {
+      color: rgb(7, 47, 82);
+    }
+    button {
+      padding: 10px;
+      margin: 5px;
+      border: none;
+      background-color: rgb(158, 171, 210);
+      color: rgba(12, 5, 147, 0.703);
+      cursor: pointer;
+    }
+    #saida {
+      margin-top: 20px;
+      padding: 15px;
+      background: white;
+      border: 1px solid #9d8383;
+      min-height: 100px;
+    }
+  </style>
+</head>
+<body>
+<h1>📖Boletim Escolar📖</h1>
+
+<p>Bem-vindo ao boletim escolar!</p>
+
+<button onclick="exibirBoletim()">Exibir Boletim</button>
+
+<div id="saida"></div>
+
+<script>
+  function exibirBoletim() {
+    const alunos = [
+      { nome: 'Aluno 1', nota: 8.5 },
+      { nome: 'Aluno 2', nota: 9.2 },
+      { nome: 'Aluno 3', nota: 7.8 },
+      { nome: 'Aluno 4', nota: 6.9 }
+    ];
+
+    const saida = document.getElementById('saida');
+    saida.innerHTML = '';
+
+    alunos.forEach(aluno => {
+      const linha = document.createElement('p');
+      const status = aluno.nota >= 7.0 ? 'Aprovado' : 'Reprovado';
+      linha.textContent = `${aluno.nome}: ${aluno.nota} - ${status}`;
+      saida.appendChild(linha);
+    });
+  }
+</script>
+</body>
+</html>
